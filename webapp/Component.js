@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "com/sap/fiz/model/models"
-], (UIComponent, models) => {
+    "com/sap/fiz/model/models",
+    "sap/ui/model/json/JSONModel"
+], (UIComponent, models,JSONModel) => {
     "use strict";
 
     return UIComponent.extend("com.sap.fiz.Component", {
@@ -21,6 +22,9 @@ sap.ui.define([
 
             // enable routing
             this.getRouter().initialize();
+
+            //model for handling layout
+            this.setModel(new JSONModel({ layout:"OneColumn"}),"layoutMod")
         }
     });
 });

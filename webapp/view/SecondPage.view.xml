@@ -1,0 +1,37 @@
+<mvc:View
+    controllerName="com.sap.fiz.controller.SecondPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="_IDGenPage" title="Employee Details">
+        <content>
+            <VBox id="_IDGenVBox2" class="sapUiSmallMargin">
+                <Label id="_IDGenLabel9" text="Employee ID:" />
+                <Text id="idEmployeeID" />
+
+                <Label id="_IDGenLabel10" text="Last Name:" />
+                <Text id="idLastName" />
+
+                <Label id="_IDGenLabel11" text="First Name:" />
+                <Text id="idFirstName" />
+
+                <Label id="_IDGenLabel12" text="Title of Courtesy:" />
+                <Text id="idTitleOfCourtesy" />
+
+                <Label id="_IDGenLabel13" text="Address:" />
+                <Text id="idAddress" />
+
+                <Label id="_IDGenLabel14" text="City:" />
+                <Text id="idCity" />
+
+                <Label id="_IDGenLabel15" text="Region:" />
+                <Text id="idRegion" />
+
+                <Label id="_IDGenLabel16" text="Postal Code:" />
+                <Text id="idPostalCode" />
+
+                <Label id="_IDGenLabel17" text="Country:" />
+                <Text id="idCountry" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

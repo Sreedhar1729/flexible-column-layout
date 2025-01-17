@@ -1,6 +1,73 @@
-<mvc:View controllerName="com.sap.fiz.controller.Home"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
+<mvc:View
+  xmlns:core="sap.ui.core"
+  controllerName="com.sap.fiz.controller.Home"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.f"
+  xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+>
+  <Page
+    id="idPage1"
+    title="Page1"
+  >
+    <customHeader>
+      <f:ShellBar id="idShellBar" title="Menu"  showCopilot="true"
+					  showSearch="true"
+					  showNotifications="true">
+        <f:menu>
+          <Menu id="idMenus">
+            <MenuItem
+              id="_IDGenMenuItem1"
+              text="Flight booking"
+              icon="sap-icon://flight"
+            />
+            <MenuItem
+              id="_IDGenMenuItem2"
+              text="Car rental"
+              icon="sap-icon://car-rental"
+            />
+          </Menu>
+        </f:menu>
+      </f:ShellBar>
+    </customHeader>
+    	
+    <content>
+     <smartfilterbar:SmartFilterBar
+                id="idSmartFiltersForEmployee"
+                entitySet="Employees">
+                <smartfilterbar:controlConfiguration>
+                    <smartfilterbar:ControlConfiguration
+                        id="idFilterBarforID"
+                        key="EmployeeID"
+                        label="EmployeeID"
+                        visibleInAdvancedArea="true"/>
+                </smartfilterbar:controlConfiguration>
+            </smartfilterbar:SmartFilterBar>
+
+            <smarttable:SmartTable
+                id="idSmartTableforEmployee"
+                header="Employees"
+                headerLevel="H6"
+                smartFilterId="idSmartFiltersForEmployee"
+                entitySet="Employees"
+                enableAutoBinding="true"
+                enableCopy="false"
+                initiallyVisibleFields="EmployeeID,LastName,FirstName,Address,City,Region,PostalCode,Country,TitleOfCourtesy">
+                
+                <smarttable:customToolbar>
+                    <OverflowToolbar id="idOVerFlowBarforEmployee">
+                        <ToolbarSpacer id="idtoolbarSpacerforEmployee"/>
+                        <Button id="idEmployeeAdd" text="Add" press="onCreateEmployee"/>
+                        <Button id="idEmployeeEdit" text="Edit" press="onEditEmployee"/>
+                        <Button id="idEmployeeDelete" text="Delete" press="onDeleteEmployee"/>
+                    </OverflowToolbar>
+                </smarttable:customToolbar>
+
+                <Table id="idEmployeeTable" mode="SingleSelect" selectionChange="onSelect">
+                <ColumnListItem id="idColumnList" type="Navigation"></ColumnListItem>
+                </Table>
+            </smarttable:SmartTable>
+    </content>
+  </Page>
 </mvc:View>

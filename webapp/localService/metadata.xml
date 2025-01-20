@@ -5,6 +5,7 @@
             <EntityType Name="Category">
                 <Key>
                     <PropertyRef Name="CategoryID" />
+                    
                 </Key>
                 <Property Name="CategoryID" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
                 <Property Name="CategoryName" Type="Edm.String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
